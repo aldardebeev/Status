@@ -264,7 +264,7 @@ return array(
          *
          * @var bool
          */
-        "enable_remote" => true,
+        "enable_remote" => false,
 
         /**
          * A ratio applied to the fonts height to be more like browsers' line height
@@ -277,7 +277,7 @@ return array(
          * @deprecated This feature is now always on in dompdf 2.x
          * @var bool
          */
-        "enable_html5_parser" => true,
+        "enable_html5_parser" => false,
     ),
 
 

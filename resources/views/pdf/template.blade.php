@@ -7,20 +7,60 @@
         body {
             font-family: DejaVu Sans, sans-serif;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
 <h1>Конфигурация двери</h1>
-<p><strong>Цвет покраски:</strong> {{ $door->paint_color }}</p>
-<p><strong>Цвет плёнки:</strong> {{ $door->film_color }}</p>
-<p><strong>Цвет ручки:</strong> {{ $door->handle_color }}</p>
-<p><strong>Ширина:</strong> {{ $door->width }} мм</p>
-<p><strong>Высота:</strong> {{ $door->height }} мм</p>
-<p><strong>Открывание:</strong> {{ $door->opening }}</p>
-<p><strong>Аксессуары:</strong> {{ implode(', ', $door->accessories) }}</p>
-<p><strong>Итоговая стоимость:</strong> {{ $door->total_price }} рублей</p>
-
-<img src="../images/default_door.jpg">
-
+<table>
+    <tr>
+        <th>Параметр</th>
+        <th>Значение</th>
+    </tr>
+    <tr>
+        <td>Цвет покраски</td>
+        <td>{{ $door->paint_color }}</td>
+    </tr>
+    <tr>
+        <td>Цвет плёнки</td>
+        <td>{{ $door->film_color }}</td>
+    </tr>
+    <tr>
+        <td>Цвет ручки</td>
+        <td>{{ $door->handle_color }}</td>
+    </tr>
+    <tr>
+        <td>Ширина</td>
+        <td>{{ $door->width }} мм</td>
+    </tr>
+    <tr>
+        <td>Высота</td>
+        <td>{{ $door->height }} мм</td>
+    </tr>
+    <tr>
+        <td>Открывание</td>
+        <td>{{ $door->opening }}</td>
+    </tr>
+    <tr>
+        <td>Аксессуары</td>
+        <td>{{ implode(', ', $door->accessories) }} </td>
+    </tr>
+    <tr>
+        <td>Итоговая стоимость</td>
+        <td>{{ $door->total_price }}рублей</td>
+    </tr>
+</table>
+<p><strong>Итоговая "дилерская" цена:</strong> {{ $door->total_price * 1.2}} рублей</p>
 </body>
-</html>
+</html>'

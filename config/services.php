@@ -20,8 +20,11 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
         'scheme' => 'https',
     ],
-    'telegram-bot-api' => [
-    'token' => env('TELEGRAM_BOT_TOKEN', 'https://api.telegram.org/bot6632502241:AAGgvnrqoPa7fv-EtJZT9emstzwZlQdpxEI')
+
+
+    'telegram' => [
+        'bot_token' => env('TELEGRAM_BOT_TOKEN'),
+        'chat_id' => env('TELEGRAM_CHAT_ID'),
     ],
 
 

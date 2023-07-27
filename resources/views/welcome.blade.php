@@ -101,12 +101,15 @@
                         <h2>Итоговая стоимость: <span id="price">0</span> рублей</h2>
                     </div>
                     <div>
-                        <button id="generateBtn" type="button" class="btn btn-lg btn-primary mt-3">Сгенерировать</button>
-                        <button id="send" type="send" class="btn btn-lg btn-primary" hidden>
-                            Отправить комплектацию
-                        </button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button id="generateBtn" type="button" class="btn btn-lg btn-primary mt-3">Сгенерировать</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="send" type="send" class="btn btn-lg btn-primary" hidden>Отправить комплектацию</button>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </form>
         </div>
@@ -139,6 +142,38 @@
     document.addEventListener("DOMContentLoaded", function () {
         // Обработчик кнопки "Сгенерировать"
         document.getElementById("generateBtn").addEventListener("click", function () {
+            if (!validateForm()) {
+                alert("Пожалуйста, выберите все параметры.");
+                return;
+            }
+
+            function validateForm() {
+                // Check if all required parameters are selected
+                var paintColor = $("#paint_color").val();
+                var filmColor = $("#film_color").val();
+                var handleColor = $("#handle_color").val();
+                var width = $("#width").val();
+                var height = $("#height").val();
+                var selectedOpening = $("input[name='opening']:checked").val();
+                var selectedAccessories = $("input[name='accessories[]']:checked").length;
+
+                if (
+                    paintColor === "default" ||
+                    filmColor === "default" ||
+                    handleColor === "default" ||
+                    width === "" ||
+                    height === "" ||
+                    isNaN(width) ||
+                    isNaN(height) ||
+                    selectedOpening === undefined ||
+                    selectedAccessories === 0
+                ) {
+                    return false; // Validation failed
+                }
+
+                return true; // Validation succeeded
+            }
+
             var paintColor = $("#paint_color").val();
             var filmColor = $("#film_color").val();
             var handleColor = $("#handle_color").val();
