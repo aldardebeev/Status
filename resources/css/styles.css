@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+}
+/* Создаем классы для каждой комбинации параметров */
+.door-red-wood-inside {
+    background-image: url('path_to_red_wood_inside_image.jpg');
+}
+
+.door-blue-metal-outside {
+    background-image: url('path_to_blue_metal_outside_image.jpg');
+}
+.door-visual {
+    width: 300px;
+    height: 500px;
+    border: 1px solid #ccc;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Скрытие всех изображений */
+.door-image {
+    display: none;
+}
+.options {
+    float: right;
+    width: 300px;
+    padding: 20px;
+}
+
+.option {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+select, input[type="radio"], input[type="checkbox"] {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.total-price {
+    margin-top: 20px;
+}
+
+#submit {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #0056b3;
+}
+
+
